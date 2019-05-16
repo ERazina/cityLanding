@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Test task for city bank
+        link(rel="stylesheet", href="../css/reset.css")
+        link(rel="stylesheet", href="../css/style.css")
+    body
+        .modal#modal.hide
+            .modal-layer
+            .modal-window
+                .inline-wrap
+                    h3.modal-header External link
+                    .modal-close-icon#cancel
+                .modal-text 
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                    | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                    | nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+                    | in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+                    |pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+                    |culpa qui officia deserunt mollit anim id est laborum. 
+                    |Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+                    |accusantium doloremque laudantium, totam rem aperiam, 
+                    |eaque ipsa quae ab illo
+                .inline-wrap
+                    button.button-cancel#cancelLink Cancel
+                    button.button-submit(type="submit" value="submit") Accept
+        header.header
+            .wrapper
+                .wrapper-block
+                    h1 Banner header
+                    .header-line
+                    p.header-textblock 
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed 
+                        | do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        | Ut enim ad minim veniam, quis nostrud
+                .wrapper-block
+                    form(action="").request-form#form
+                        .form-wrapper
+                            h2.form-header Request form
+                            .input-container
+                                input.form-input.email#email(type="email")
+                                label.close-button#removeEmail(for='email') &#215;
+                            .input-container-for-name
+                                input.form-input.text#name(type="text")
+                                label.close-button#removeName(for='name') &#215;
+                            select-input
+                                select.form-input#country(name="") Select your country
+                                    option#select Select your country
+                                    option Russia
+                                    option USA
+                                    option Germany
+                                    option Japan
+                            .inline-wrap
+                                .checkbox
+                                    input#cb.form-checkbox(type="checkbox")
+                                    label(for='cb') I agree with Terms & Conditions
+
+                            .inline-wrap
+                                button.button#submit(type="submit" value="submit") submit
+                                a.form-link(href="") Hyperlink
+            
+        section.benefits
+            .wrapper
+                .benefits-card 
+                    .benefits-card__layout 
+                        h3.header Post header 1
+                        p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                
+                .benefits-card 
+                    .benefits-card__layout 
+                        h3.header Post header 2
+                        p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                
+                .benefits-card 
+                    .benefits-card__layout 
+                        h3.header Post header 3
+                        p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                
+                .benefits-card 
+                    .benefits-card__layout 
+                        h3.header Post header 4
+                        p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                
+                .benefits-card 
+                    .benefits-card__layout 
+                        h3.header Post header 5
+                        p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        
+        section.list
+            .wrapper
+                .list-image 
+                    img.monitor(src="/img/monitor.png", alt="monitor")
+                .list-itemList
+                    h2.list-itemList-header Title text
+                    ol.list-itemList_list#list
+                        li Duis aute irure dolor in reprehenderit
+                            sup 1
+                            | in voluptate velit
+                        li Ullamco laboris nisi ut aliquip ex ea commodo consequat 
+                        li Ut enim ad minim veniam, quis nostrud exercitation
+                        li Et dolore magna aliqua
+                        li Sed do eiusmod tempor
+                            sup 2
+                            |incididunt ut labore
+                        li Lorem ipsum dolor sit amet
+                            sup 3
+                            |, consectetur adipisicing elit
+
+        footer.footer
+            .wrapper
+                - const footerListItems = ['Reprehenderit - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore', 'Tempor - Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Amet - Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'];
+                ul
+                    each item in footerListItems
+                        li.footer-list= item
+
+        script(src="/js/script.js")
+                    
+
+
+
