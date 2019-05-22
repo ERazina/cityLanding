@@ -8,8 +8,17 @@ $black: #333333;
 
 // mixin inline-flex
 @mixin inline-flex{
+    display: -ms-flex;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: row;
     flex-direction: row;
+}
+
+@mixin flex{
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
 }
 
 //mixin for button
@@ -46,10 +55,11 @@ body{
     font-family: Arial;
     max-width: 1920px;
 
-// modal
     .modal{
+        @include flex;
         width: 100%;
-        display: flex;
+        -webkit-justify-flex: center;
+        -ms-justify-flex: center;
         justify-content: center;
 
         .modal-layer{
@@ -65,7 +75,9 @@ body{
             width: 96%;
             height: 80%;
             background: $white;
-            display: flex;
+            @include flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
             flex-direction: column;
             position: fixed;
             color: $black;
@@ -79,9 +91,10 @@ body{
 
             .inline-wrap{
                 @include inline-flex;
+                -webkit-justify-content: space-between;
+                -ms-justify-content: space-between;
                 justify-content: space-between;
 
-    
                 .modal-header{
                     font-size: 24px;
                     font-weight: bold;
@@ -123,6 +136,7 @@ body{
         }
     }
     .modal.show{
+        @include flex;
         display: flex !important;
     }
     .modal.hide{
@@ -137,9 +151,14 @@ body{
         width: 100%;
 
         .wrapper{
-            display: flex;
+            @include flex;
+            display: flex !important;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
             flex-direction: column;
             width: 100%;
+            -webkit-align-items: center;
+            -ms-align-items: center;
             align-items: center;
             
             &-block{
@@ -169,16 +188,22 @@ body{
                     width: 300px;
                     height: 340px;
                     background: $white;
-                    display: flex;
+                    @include flex;
+                    -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
                     flex-direction: column;
                     border-radius: 3px;
                     margin-bottom: 20px;
 
                     .form-wrapper{
 
-                        display: flex;
+                        @include flex;
+                        -webkit-flex-direction: column;
+                        -ms-flex-direction: column;
                         flex-direction: column;
                         width: 280px;
+                        -webkit-align-self: center;
+                        -ms-align-self: center;
                         align-self: center;
                         color: $grey;
 
@@ -246,8 +271,6 @@ body{
                         .err{
                             color: $red;
                             border: 1px solid $red;
-
-
                         }
 
                         .form-input.err + label{
@@ -261,14 +284,6 @@ body{
                             content: 'Insert correct Email';
                         }
 
-                        // .form-input.err + label{
-                        //     color: $red;
-                        // }
-                        // .form-input.noErr + label{
-                        //     color: $blue-text;
-                        // }
-
-                        
                         .email, .text{
                             margin-bottom: 15px;
                         }
@@ -282,7 +297,9 @@ body{
                         }
 
                         .inline-wrap{
-                            display: flex;
+                            @include flex;
+                            -webkit-flex-direction: row;
+                            -ms-flex-direction: row;
                             flex-direction: row;
                             margin-top: 17px;
 
@@ -300,7 +317,7 @@ body{
                                 padding-left: 0;
                             }
                             .checkbox label:after {
-                                content:'';
+                                content: '';
                                 display:block;
                                 height:18px;
                                 width:18px;
@@ -356,8 +373,12 @@ body{
 
 .benefits{
 
-    display: flex;
+    @include flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
     justify-content: center;
 
     &-card{
@@ -424,9 +445,6 @@ body{
         background-size: cover;
 
     }
-
-
-
 }
 
 .benefits:after{
@@ -446,7 +464,9 @@ body{
         background: $white-text;
 
         .wrapper{
-            display: flex;
+            @include flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
             flex-direction: column;
             color: $blue-text;
             padding: 10px 10px 14px 10px;
@@ -461,7 +481,9 @@ body{
                 }
                 
                 &_list{ 
-                    display: flex;
+                    @include flex;
+                    -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
                     flex-direction: column;
                     list-style: none;
                     counter-reset: list 0;
@@ -483,10 +505,16 @@ body{
                         width: 30px;
                         height: 30px;
                         border-radius: 50%;
+                        display: -ms-inline-flex;
+                        display: -webkit-inline-flex;
                         display: inline-flex;
                         background: $blue-text;
                         color: $white-text;
+                        -webkit-justify-content: center;
+                        -ms-justify-content: center;
                         justify-content: center;
+                        -webkit-align-items: center;
+                        -ms-align-items: center;
                         align-items: center;
                         line-height: 30px;
                         margin-left: -20px;
@@ -502,7 +530,9 @@ body{
     .footer{
 
         .wrapper{
-            display: flex;
+            @include flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
             flex-direction: column;
             margin-left: 229px;
             margin-right: 305px;
@@ -512,6 +542,8 @@ body{
             margin-bottom: 20px;
             margin-left: auto;
             margin-right: auto;
+            -webkit-justify-content: center;
+            -ms-justify-content: center;
             justify-content: center;
             width: 77%;
             border-left: 5px solid#4488bb;
@@ -544,7 +576,11 @@ body{
             background-image: linear-gradient(to top, rgba(68, 136, 187, 0.6), rgba(68, 136, 187,0.6)),
             url('../img/image.png');
             .wrapper{
-                display: flex;
+                @include flex;
+                -webkit-flex-direction: row;
+                -webkit-flex-wrap: wrap;
+                -webkit-justify-content: space-between;
+                -webkit-align-content: flex-start;
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: space-between;
@@ -567,7 +603,8 @@ body{
 @media (min-width: 1024px) {
     body{
         .header{
-            display: flex;
+            @include flex;
+            -webkit-justify-content: center;
             justify-content: center;
 
             .wrapper{
@@ -588,10 +625,14 @@ body{
                 margin: 0 auto;
                 margin-top: 75px;
                 margin-bottom: 75px;
-                display: flex;
+                @include flex;
+                -webkit-flex-direction: row;
                 flex-direction: row;
+                -webkit-flex-wrap: wrap;
                 flex-wrap: wrap;
+                -webkit-justify-content: space-between;
                 justify-content: space-between;
+                -webkit-align-content: flex-start;
                 align-content: flex-start;
 
 
@@ -624,8 +665,6 @@ body{
                     }
                 }
             }
-
-
         }
 
         .list{
@@ -633,11 +672,16 @@ body{
 
             .wrapper{
                 max-width: 1190px;
-                display: flex;
+                @include flex;
+                -webkit-flex-direction: row;
                 flex-direction: row;
+                -webkit-flex-wrap: wrap;
                 flex-wrap: wrap;
+                -webkit-justify-content: flex-start;
                 justify-content: flex-start;
+                -webkit-align-items: flex-start;
                 align-items: flex-start;
+                -webkit-align-content: flex-start;
                 align-content: flex-start;
                 margin: 0 auto;
             
@@ -655,7 +699,7 @@ body{
 
                 .list-image{
                     .monitor{
-                        display: flex;
+                        @include flex;
                         position: relative;
                         top: -3em;
                     }
@@ -666,7 +710,8 @@ body{
 
         .footer{
             width: 100%;
-            display: flex;
+            @include flex;
+            -webkit-justify-content: center;
             justify-content: center;
 
             .wrapper{
@@ -676,5 +721,4 @@ body{
             }
         }
     }
-
 }
