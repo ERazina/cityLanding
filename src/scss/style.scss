@@ -398,13 +398,17 @@ body{
                             }
                             .checkbox label:after {
                                 content: '';
-                                display:block;
-                                height:18px;
-                                width:18px;
-                                position:absolute;
+                                display: block;
+                                height: 18px;
+                                width: 18px;
+                                position: absolute;
                                 background: $white-text;
                                 top:0;
                                 left:0;
+                            }
+
+                            .checkbox input[type=checkbox]:not(:checked)+ label:after {
+                                outline: 1px solid $red;
                             }
                             .checkbox input[type=checkbox]:checked + label:after {
                                 border:2px solid #fff;
