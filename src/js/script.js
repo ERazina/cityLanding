@@ -103,10 +103,13 @@ form.addEventListener('submit', (e) => {
         let val = element.value;
         if(element.value !== 'Select your country'){
             console.log('Country Selected');
+            if(element.classList.contains('red')){
+                element.classList.remove('red');
+            }
         }
         else{
             // должен возникать тултип
-            console.log('Select your cointry');
+            element.classList.add('red');
             }
     }
 

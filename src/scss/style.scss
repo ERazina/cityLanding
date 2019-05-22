@@ -367,8 +367,12 @@ body{
                         .select-input{
                             @include input-container;
                         }
+
+                        .form-input.red{
+                            border: 1px solid $red;
+                        }
                         .select-input::after{
-                            content: '1';
+                            content: '';
                             @include before;
                         }
 
