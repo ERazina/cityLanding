@@ -55,10 +55,14 @@ form.addEventListener('submit', (e) => {
         let emailRegexp = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
 
             if(val.match(emailRegexp)){
+                element.classList.remove('err');
+                element.parentElement.classList.remove('errText');
                 element.classList.add('noErr');
                 element.parentElement.classList.add('noErrText');
             }
             else{
+                element.classList.remove('noErr');
+                element.parentElement.classList.remove('noErrText');
                 element.classList.add('err');
                 element.parentElement.classList.add('errText');
             }
@@ -69,10 +73,14 @@ form.addEventListener('submit', (e) => {
         let nameRegexp = /^[A-Za-zа-яА-Я-\s]*$/i;
 
             if(val.match(nameRegexp)){
+                element.classList.remove('err');
+                element.parentElement.classList.remove('errText');
                 element.classList.add('noErr');
                 element.parentElement.classList.add('noErrText');
             }
             else{
+                element.classList.remove('noErr');
+                element.parentElement.classList.remove('noErrText');
                 element.classList.add('err');
                 element.parentElement.classList.add('errText');
             }
