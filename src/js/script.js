@@ -59,12 +59,19 @@ form.addEventListener('submit', (e) => {
                 element.parentElement.classList.remove('errText');
                 element.classList.add('noErr');
                 element.parentElement.classList.add('noErrText');
+                if(element.parentElement.lastElementChild.classList.contains('show')){
+                    element.parentElement.lastElementChild.classList.remove('show');
+                    element.parentElement.lastElementChild.classList.add('hide');
+                }
+                
+
             }
             else{
                 element.classList.remove('noErr');
                 element.parentElement.classList.remove('noErrText');
                 element.classList.add('err');
                 element.parentElement.classList.add('errText');
+                element.parentElement.lastElementChild.classList.add('show');
             }
     }
     function validateName(element){
@@ -72,17 +79,23 @@ form.addEventListener('submit', (e) => {
         let val = element.value;
         let nameRegexp = /^[A-Za-zа-яА-Я-\s]*$/i;
 
-            if(val.match(nameRegexp)){
+            if(val.match(nameRegexp) && val !== ''){
                 element.classList.remove('err');
                 element.parentElement.classList.remove('errText');
                 element.classList.add('noErr');
                 element.parentElement.classList.add('noErrText');
+                console.log(element.parentElement.lastElementChild);
+                if(element.parentElement.lastElementChild.classList.contains('show')){
+                    element.parentElement.lastElementChild.classList.remove('show');
+                    element.parentElement.lastElementChild.classList.add('hide');
+                }
             }
             else{
                 element.classList.remove('noErr');
                 element.parentElement.classList.remove('noErrText');
                 element.classList.add('err');
                 element.parentElement.classList.add('errText');
+                element.parentElement.lastElementChild.classList.add('show');
             }
     }
 
