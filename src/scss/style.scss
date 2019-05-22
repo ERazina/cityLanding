@@ -73,7 +73,7 @@ body{
 
         .modal-window{
             width: 96%;
-            height: 80%;
+            height: 500px;
             background: $white;
             @include flex;
             -webkit-flex-direction: column;
@@ -83,7 +83,6 @@ body{
             color: $black;
             top: 0;
             bottom: 0;
-            height: 400px;
             padding: 23px 10px 30px 10px;
             margin: 10px 0px 10px 0px;
             font-size: 16px;
@@ -110,10 +109,12 @@ body{
                 }
             }
 
-            .inline-wrap{
+            .inline-wrap-button{
                 @include inline-flex;
                 margin-top: 25px;
                 margin-left: 20%;
+                -ms-justify-content: flex-end;
+                justify-content: flex-end;
 
                 .button-cancel{
                     color: $grey;  
@@ -124,6 +125,7 @@ body{
                     @include button;
                     outline: none;
                     cursor: pointer;
+                    margin-left: 36px;
                 }
 
                 .button-submit:hover{
@@ -572,6 +574,17 @@ body{
 
 @media (min-width: 768px) {
     body{
+
+        .modal{
+            max-width: 590px;
+            height: 300px;
+            margin: auto;
+
+            &-window{
+                max-width: 590px;
+                max-height: 300px;
+            }
+        }
         .header{
             background-image: linear-gradient(to top, rgba(68, 136, 187, 0.6), rgba(68, 136, 187,0.6)),
             url('../img/image.png');
